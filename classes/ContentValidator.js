@@ -13,7 +13,7 @@ class ContentValidator {
         return new Promise(async (resolve, reject) => {
             //check if content is hastebin url
             if (urls.allowed_urls.findIndex(url => message.content.startsWith(url)) !== -1) {
-                if (message.content.split(' ')[0].match(urlExpresion)) {
+                if (message.content.match(urlExpresion)) {
                     let text = await this.parseUrl(message).catch(reject);
                     return resolve(this.parseMessage(text));
                 }
@@ -47,12 +47,17 @@ class ContentValidator {
     parseImage(message) {
         let attachment = message.attachments.first()
 
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
+            await message.react(images.message_reaction)
+
             Tesseract.recognize(attachment.url, images.parse_language)
-                .then(({data: {text}}) => {
+                .then(async ({data: {text}}) => {
+                    await message.reactions.removeAll()
                     return resolve(text)
                 })
                 .catch(reject)
+
+
         })
 
     }

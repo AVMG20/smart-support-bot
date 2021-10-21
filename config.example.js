@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 module.exports = {
     token: 'YOUR_BOT_TOKEN',
 
@@ -9,8 +7,13 @@ module.exports = {
         activity_status: 'online',
     },
 
+    //the channels the bot is allowed to use
+    support_channels: [ //channel ids
+        '896300470971285521'
+    ],
+
     //configured allowed urls
-    urls : {
+    urls: {
         allowed_urls: [
             'https://hastebin.com'
         ],
@@ -18,16 +21,17 @@ module.exports = {
     },
 
     //configure image parsing
-    images : {
-        max_size_in_bytes : 1048576, //1mb
-        parse_language : 'eng'
+    images: {
+        max_size_in_bytes: 1048576, //1mb
+        parse_language: 'eng',
+        message_reaction: '👀'
     },
 
     //all keys have to be valid regex
-    responses : [
+    responses: [
         {
-            key : /^(?=.*hello)(?=.*world).*$/mgi,
-            content : `Hello World!`
+            key: /^(?=.*hello)(?=.*world).*$/mgi,
+            content: `Hello World!`
         },
     ]
 }

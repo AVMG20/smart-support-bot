@@ -1,5 +1,5 @@
 const {Client, Intents} = require('discord.js');
-const {token, bot} = require('./config');
+const {token, bot, responses, support_channels} = require('./config');
 const respond = require('./respond')
 const contentValidator = require('./classes/ContentValidator')
 
@@ -11,11 +11,13 @@ client.once('ready', async () => {
     await client.user.setActivity(bot.activity_message, {type: bot.activity});
     await client.user.setStatus(bot.activity_status);
 
+    console.log(`Found '${responses.length}' responses!`)
     console.log('Ready!');
 });
 
 client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
+    if (!support_channels.includes(message.channelId)) return;
     let response = await contentValidator.validateContent(message)
 
     if (response) {
