@@ -10,7 +10,8 @@ using regex you can easily determine the best matches and respond accordingly
 
 ## Examples
 Example using image<br/>
-![Discord_DErrdObNXf](https://user-images.githubusercontent.com/45005889/138349910-88a41fbe-94b2-405a-82d0-a1286920ef43.png) <br/> <br/>
+![Discord_gJiwXFIPkr](https://user-images.githubusercontent.com/45005889/138361646-7544ec8f-aec7-4d69-a0ad-71d63c0ac218.png) <br/> <br/>
+
 Example using url <br/>
 ![Discord_CUr0VvM8Rf](https://user-images.githubusercontent.com/45005889/138349727-23e437e7-d8a9-40dc-928d-1bdaec95f051.png)<br/> <br/>
 Example response config
