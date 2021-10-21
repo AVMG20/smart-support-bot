@@ -1,24 +1,35 @@
 # Smart support bot
 A simple discord chat bot with an easy to use configuration. Written using discord.js
 
-this bot can read
+reads text from:
 - text
 - urls
 - images
 
-using regex you can determine the best matches to respond on
+using regex you can easily determine the best matches and respond accordingly
 
-## Example
-
-
+## Examples
+Example using image<br/>
+![Discord_DErrdObNXf](https://user-images.githubusercontent.com/45005889/138349910-88a41fbe-94b2-405a-82d0-a1286920ef43.png) <br/> <br/>
+Example using url <br/>
+![Discord_CUr0VvM8Rf](https://user-images.githubusercontent.com/45005889/138349727-23e437e7-d8a9-40dc-928d-1bdaec95f051.png)<br/> <br/>
+Example response config
+```js
+responses : [
+    {
+        key : /^(?=.*hello)(?=.*world).*$/mgi, //match any string that includes both the words: hello and world
+        content : `Hello World!` //respond with Hello World!
+    }
+ ]
+ ```
 
 ## Requirements
 [Node](https://nodejs.org/en/) version `^16` <br />
 Npm 
 
 ## Usage
-rename the [config.example.js](config.example.js) to `config.js` and 
-configure options to your needs and add as many responses as you like ;)
+Rename the [config.example.js](config.example.js) to `config.js` and 
+configure the options to your needs and add as many responses as you like ;)
 
 install packages `npm install` <br/>
 start the bot `npm start`
