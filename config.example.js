@@ -15,7 +15,7 @@ module.exports = {
     //configured allowed urls
     urls: {
         allowed_urls: [
-            'https://hastebin.com'
+            'https://pastebin.com'
         ],
         max_content_size_in_bytes: 1048576, //1mb
     },
