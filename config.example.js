@@ -17,12 +17,12 @@ module.exports = {
         allowed_urls: [
             'https://pastebin.com'
         ],
-        max_content_size_in_bytes: 1048576, //1mb
+        max_content_size_in_bytes: 314572, //0.3mb
     },
 
     //configure image parsing
     images: {
-        max_size_in_bytes: 1048576, //1mb
+        max_size_in_bytes: 314572, //0.3mb
         parse_language: 'eng',
         message_reaction: '👀'
     },
