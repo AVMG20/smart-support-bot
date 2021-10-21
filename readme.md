@@ -36,7 +36,7 @@ install packages `npm install` <br/>
 start the bot `npm start`
 
 ## Donating
-Are you enjoying the smart-support-bot? Feeling generous? Well, help me purchase pizza to continue working on the bot without empty stomach!
+Are you enjoying the smart-support-bot? Feeling generous? Well, help me purchase pizza to continue working on the bot an without empty stomach!
 
 Your donations go a long way in helping me develop this bot, but please don't feel obligated to.
 
