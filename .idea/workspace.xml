@@ -81,7 +81,7 @@
       <workItem from="1634222867165" duration="9275000" />
       <workItem from="1634498200614" duration="46000" />
       <workItem from="1634795637321" duration="2696000" />
-      <workItem from="1634834499120" duration="10868000" />
+      <workItem from="1634834499120" duration="11100000" />
     </task>
     <servers />
   </component>
@@ -101,10 +101,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="703" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1634845971755">
+    <state x="703" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1634847823132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="703" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634845971755" />
+    <state x="703" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634847823132" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1634498245336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -113,6 +113,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634144582109" />
+    <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1634847777192">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="253" width="585" height="534" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1634847777192" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1634796060979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
