@@ -11,7 +11,7 @@ class ContentValidator {
      */
     validateContent(message) {
         return new Promise(async (resolve, reject) => {
-            //check if content is hastebin url
+            //check if content is pastebin url (or something like that)
             if (urls.allowed_urls.findIndex(url => message.content.startsWith(url)) !== -1) {
                 if (message.content.match(urlExpresion)) {
                     let text = await this.parseUrl(message).catch(reject);
@@ -27,6 +27,9 @@ class ContentValidator {
                     return resolve(this.parseMessage(text));
                 }
             }
+
+            //if message is url, don't search for matches and respond
+            if (message.content.match(urlExpresion)) return null;
 
             return resolve(this.parseMessage(message.content))
         })
