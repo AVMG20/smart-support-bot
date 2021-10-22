@@ -3,6 +3,7 @@ const Tesseract = require('tesseract.js')
 const axios = require('axios');
 const {responses, urls, images} = require('../config')
 const urlExpresion = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:\/?#[\]@!\$&'\(\)\*\+,;=.]+$/mg
+const findUrlsExpression = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])/gm
 
 class ContentValidator {
     /**
@@ -27,9 +28,6 @@ class ContentValidator {
                     return resolve(this.parseMessage(text));
                 }
             }
-
-            //if message is url, don't search for matches and respond
-            if (message.content.match(urlExpresion)) return null;
 
             return resolve(this.parseMessage(message.content))
         })
@@ -83,11 +81,13 @@ class ContentValidator {
 
     /**
      * @description search for a match, return the response or null
+     * @note the text is filtered from urls, to prevent the bot on reaction to urls that contain keys
      * @param {string} text
      * @return {{key: RegExp, content: string}|null}
      */
     parseMessage(text) {
-        let index = responses.findIndex(response => text.match(response.key))
+        let textToCheck = text.replaceAll(findUrlsExpression, '')
+        let index = responses.findIndex(response => textToCheck.match(response.key))
         return index !== -1 ? responses[index] : null;
     }
 }
