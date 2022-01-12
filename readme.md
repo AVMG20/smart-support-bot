@@ -1,5 +1,6 @@
-# Smart support bot
-A simple discord chat bot with an easy to use configuration. Written using discord.js
+# Automated support bot
+A simple discord chatbot with an easy-to-use configuration. Written using discord.js
+
 
 reads text from:
 - text

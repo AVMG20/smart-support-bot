@@ -1,7 +1,9 @@
 module.exports = {
     token: 'YOUR_BOT_TOKEN',
 
-    bot: { // https://discordjs.guide/popular-topics/faq.html#how-do-i-check-if-a-guild-member-has-a-specific-role
+    // check discord.js docs on valid bot properties
+    // https://discordjs.guide/popular-topics/faq.html#how-do-i-check-if-a-guild-member-has-a-specific-role
+    bot: {
         activity: 'PLAYING',
         activity_message: 'Smart Support',
         activity_status: 'online',
@@ -15,7 +17,8 @@ module.exports = {
     //configured allowed urls
     urls: {
         allowed_urls: [
-            'https://pastebin.com'
+            'https://pastebin.com',
+            'https://termbin.com'
         ],
         max_content_size_in_bytes: 314572, //0.3mb
     },
@@ -26,12 +29,4 @@ module.exports = {
         parse_language: 'eng',
         message_reaction: '👀'
     },
-
-    //all keys have to be valid regex
-    responses: [
-        {
-            key: /^(?=.*hello)(?=.*world).*$/mgi,
-            content: `Hello World!`
-        },
-    ]
 }

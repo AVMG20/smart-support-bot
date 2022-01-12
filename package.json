@@ -20,6 +20,7 @@
     "dotenv": "^10.0.0",
     "nanoid": "^3.1.29",
     "node-cache": "^5.1.2",
+    "regex-parser": "^2.2.11",
     "tesseract.js": "^2.1.5"
   }
 }
