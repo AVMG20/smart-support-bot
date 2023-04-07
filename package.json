@@ -1,7 +1,7 @@
 {
   "name": "smart-support-bot",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
