@@ -1,0 +1,29 @@
+{
+    "token": "YOUR BOT TOKEN HERE",
+
+    "bot": {
+        "activity": "PLAYING",
+        "activity_message": "Smart Support",
+        "activity_status": "online"
+    },
+
+    "support_channels": [
+        "SUPPORT CHANNEL ID's HERE"
+    ],
+
+    "urls": {
+        "allowed_urls": [
+            "https://pastebin.com",
+            "https://termbin.com",
+        ],
+        "max_content_size_in_bytes": 314572
+    },
+
+    "images": {
+        "max_size_in_bytes": 524288 ,
+        "parse_language": "eng",
+        "message_reaction": "\uD83D\uDC40"
+    },
+
+    "debug": true
+}

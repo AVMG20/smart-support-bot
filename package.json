@@ -1,26 +1,27 @@
 {
-  "name": "controlpanel-discord-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "smart-support-bot",
+  "private": true,
+  "version": "1.1.0",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "watch:build": "tsc -w",
+    "watch:serve": "nodemon dist/index.js",
+    "dev": "concurrently \"npm:watch:build\" \"npm:watch:serve\"",
+    "prod": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^4.9.5"
+  },
   "dependencies": {
-    "@discordjs/builders": "^0.6.0",
-    "@discordjs/rest": "^0.1.0-canary.0",
-    "axios": "^0.21.4",
-    "dayjs": "^1.10.7",
-    "discord-api-types": "^0.23.1",
-    "discord.js": "^13.1.0",
-    "dotenv": "^10.0.0",
-    "nanoid": "^3.1.29",
-    "node-cache": "^5.1.2",
+    "axios": "^1.3.5",
+    "discord.js": "^14.9.0",
     "regex-parser": "^2.2.11",
-    "tesseract.js": "^2.1.5"
+    "tesseract.js": "^4.0.3"
   }
 }
