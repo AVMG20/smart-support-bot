@@ -2,6 +2,7 @@ export interface SettingsInterface {
     token: string;
     bot: BotConfig;
     support_channels: string[];
+    excluded_roles: string[];
     urls: UrlsConfig;
     images: ImagesConfig;
     debug: boolean;

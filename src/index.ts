@@ -1,11 +1,10 @@
-import {Client, GatewayIntentBits, PresenceStatusData} from 'discord.js';
+import {Client, GatewayIntentBits, Message, PresenceStatusData} from 'discord.js';
 import {assertActivityType} from "./util/assertActivityType.js";
 import {MessageReader, MessageReaderConfig} from "./message/MessageReader.js";
 import {SettingsInterface} from "./interface/SettingsInterface";
 import {readJson} from "./util/readJson.js";
 import {MessageMatcher} from "./message/MessageMatcher.js";
 import {ResponseInterface} from "./interface/ResponseInterface";
-
 
 /** --- Declare constants --- */
 
@@ -42,8 +41,9 @@ client.once('ready', async () => {
 
 // Listen for messages
 client.on('messageCreate', async (message) => {
-    // Ignore messages from bots and messages that are not in the support channels
-    if (message.author.bot || !settings.support_channels.includes(message.channelId)) return;
+
+    // Ignore messages that should not be responded to
+    if (!botShouldRespond(message)) return;
 
     try {
         // Read the message
@@ -63,3 +63,19 @@ client.on('messageCreate', async (message) => {
 
 // Login to Discord with your client's token
 client.login(settings.token);
+
+/** --- Helper functions --- */
+
+const botShouldRespond = (message: Message): boolean => {
+    // Ignore messages from bots
+    if (message.author.bot) return false;
+
+    // Ignore messages that are not in the support channels
+    if (!settings.support_channels.includes(message.channelId)) return false;
+
+    // Ignore messages that are from users with excluded roles
+    if (message.member?.roles.cache.some(role => settings.excluded_roles.includes(role.id))) return false;
+
+    return true;
+}
+

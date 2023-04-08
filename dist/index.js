@@ -84,8 +84,8 @@ client.on('messageCreate', function (message) { return __awaiter(void 0, void 0,
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                // Ignore messages from bots and messages that are not in the support channels
-                if (message.author.bot || !settings.support_channels.includes(message.channelId))
+                // Ignore messages that should not be responded to
+                if (!botShouldRespond(message))
                     return [2 /*return*/];
                 _a.label = 1;
             case 1:
@@ -114,3 +114,17 @@ client.on('messageCreate', function (message) { return __awaiter(void 0, void 0,
 }); });
 // Login to Discord with your client's token
 client.login(settings.token);
+/** --- Helper functions --- */
+var botShouldRespond = function (message) {
+    var _a;
+    // Ignore messages from bots
+    if (message.author.bot)
+        return false;
+    // Ignore messages that are not in the support channels
+    if (!settings.support_channels.includes(message.channelId))
+        return false;
+    // Ignore messages that are from users with excluded roles
+    if ((_a = message.member) === null || _a === void 0 ? void 0 : _a.roles.cache.some(function (role) { return settings.excluded_roles.includes(role.id); }))
+        return false;
+    return true;
+};

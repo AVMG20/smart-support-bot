@@ -11,10 +11,14 @@
         "SUPPORT CHANNEL ID's HERE"
     ],
 
+    "excluded_roles": [
+        "EXCLUDED ROLE ID's HERE"
+    ],
+
     "urls": {
         "allowed_urls": [
             "https://pastebin.com",
-            "https://termbin.com",
+            "https://termbin.com"
         ],
         "max_content_size_in_bytes": 314572
     },

@@ -91,6 +91,9 @@ an explanation of its contents:
   "support_channels": [
     "CHANNEL IDS HERE"
   ],
+  "excluded_roles": [
+    "ROLE IDS HERE"
+  ],
   "urls": {
     "allowed_urls": [
       "https://pastebin.com",
@@ -110,18 +113,19 @@ an explanation of its contents:
 - **`"token"`**: Replace **`"BOT TOKEN HERE"`** with your bot's token.
 - **`"bot"`**: Configure the bot's activity type, message, and status.
     - **`"activity"`**: Set the activity type (e.g., **`"PLAYING"`**, **`"STREAMING"`**, **`"LISTENING"`**, *
-      *`"WATCHING"`**, or **`"COMPETING"`**).
+      ***`"WATCHING"`***, or **`"COMPETING"`**).
     - **`"activity_message"`**: Set a custom message for the bot's status.
     - **`"activity_status"`**: Set the bot's online status (e.g., **`"online"`**, **`"idle"`**, **`"dnd"`** or *
-      *`"invisible"`**).
+      ***`"invisible"`***).
 - **`"support_channels"`**: Replace **`"CHANNEL IDS HERE"`** with an array of channel IDs where the bot should operate.
+- **`"excluded_roles"`**: Replace **`"ROLE IDS HERE"`** with an array of role IDs that should be excluded from bot reactions.
 - **`"urls"`**: Configure URL handling options.
-    - **`"allowed_urls"`**: Add an array of allowed URLs to parse.
-    - **`"max_content_size_in_bytes"`**: Set the maximum content size for URLs.
+      - **`"allowed_urls"`**: Add an array of allowed URLs to parse.
+      - **`"max_content_size_in_bytes"`**: Set the maximum content size for URLs.
 - **`"images"`**: Configure image handling options.
-    - **`"max_size_in_bytes"`**: Set the maximum image size for parsing.
-    - **`"parse_language"`**: Set the language used for parsing images.
-    - **`"message_reaction"`**: Set the reaction to add to messages with images.
+      - **`"max_size_in_bytes"`**: Set the maximum image size for parsing.
+      - **`"parse_language"`**: Set the language used for parsing images.
+      - **`"message_reaction"`**: Set the reaction to add to messages with images.
 - **`"debug"`**: Set to **`true`** to enable extra debug messages.
 
 ## **Configuring Responses**
